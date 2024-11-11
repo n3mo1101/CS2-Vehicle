@@ -51,7 +51,22 @@ namespace Vehicle_Cornel_DelaCruz
 
         class Motorcycle : Vehicle
         {
+            public int EngineCC { get; set; }
+            public bool IsSportBike { get; set; }
 
+        
+
+            public Motorcycle(string vehicleid, string make, string model, float fuelefficiency, int enginecc,
+            bool issportbike) : base (vehicleid, make, model, fuelefficiency)
+            {
+                EngineCC = enginecc;
+                IsSportBike = issportbike;
+            }
+
+            public float CalculateFuelConsumption (float distance)
+            {
+                //return distance / FuelEfficiency
+            }
         }
 
     }
