@@ -43,8 +43,8 @@ namespace Vehicle_Cornel_DelaCruz
 
         class Car : Vehicle
         {
-            public int NumDoors;
-            public bool IsAutomatic;
+            public int NumDoors { get; set; }
+            public bool IsAutomatic { get; set; }
 
             public Car(int vehicleid, string make, string model, float fuelefficiency, 
                 int numdoors, bool isautomatic) :
