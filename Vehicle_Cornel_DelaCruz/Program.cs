@@ -32,11 +32,11 @@ namespace Vehicle_Cornel_DelaCruz
 
         class Car : Vehicle
         {
-            public bool NumDoors;
+            public int NumDoors;
             public bool IsAutomatic;
 
             public Car(string vehicleid, string make, string model, float fuelefficiency, 
-                bool numdoors, bool isautomatic) :
+                int numdoors, bool isautomatic) :
                 base(vehicleid, make, model, fuelefficiency)
             {
                 NumDoors = numdoors;
@@ -65,7 +65,13 @@ namespace Vehicle_Cornel_DelaCruz
 
             public float CalculateFuelConsumption (float distance)
             {
-                //return distance / FuelEfficiency
+                float fuelconsumption = distance / FuelEfficiency; 
+                if (IsSportBike)
+                {
+                    fuelconsumption *= 1.1f;
+                }
+
+                return fuelconsumption;
             }
         }
 
