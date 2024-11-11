@@ -65,8 +65,6 @@ namespace Vehicle_Cornel_DelaCruz
             public int EngineCC { get; set; }
             public bool IsSportBike { get; set; }
 
-        
-
             public Motorcycle(int vehicleid, string make, string model, float fuelefficiency, int enginecc,
             bool issportbike) : base (vehicleid, make, model, fuelefficiency)
             {
@@ -105,6 +103,5 @@ namespace Vehicle_Cornel_DelaCruz
                 return fuelConsumption;
             }  
         }
-
     }
 }
