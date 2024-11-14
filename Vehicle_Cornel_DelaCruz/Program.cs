@@ -32,12 +32,12 @@ namespace Vehicle_Cornel_DelaCruz
             public string Model { get; set; }
             public float FuelEfficiency { get; set; }
 
-            public Vehicle (int vehicleid, string make, string model, float fuelefficiency) 
+            public Vehicle (int vehicleId, string make, string model, float fuelEfficiency) 
             {
-                VehicleId = vehicleid;
+                VehicleId = vehicleId;
                 Make = make;
                 Model = model;
-                FuelEfficiency = fuelefficiency;
+                FuelEfficiency = fuelEfficiency;
             }
         }
 
@@ -46,12 +46,12 @@ namespace Vehicle_Cornel_DelaCruz
             public int NumDoors { get; set; }
             public bool IsAutomatic { get; set; }
 
-            public Car(int vehicleid, string make, string model, float fuelefficiency, 
-                int numdoors, bool isautomatic) :
-                base(vehicleid, make, model, fuelefficiency)
+            public Car(int vehicleId, string make, string model, float fuelEfficiency, 
+                int numDoors, bool isAutomatic) :
+              base(vehicleId, make, model, fuelEfficiency)
             {
-                NumDoors = numdoors;
-                IsAutomatic = isautomatic;
+                NumDoors = numDoors;
+                IsAutomatic = isAutomatic;
             }
 
             public float CalculateFuelConsumption (float distance) 
@@ -65,22 +65,22 @@ namespace Vehicle_Cornel_DelaCruz
             public int EngineCC { get; set; }
             public bool IsSportBike { get; set; }
 
-            public Motorcycle(int vehicleid, string make, string model, float fuelefficiency, int enginecc,
-            bool issportbike) : base (vehicleid, make, model, fuelefficiency)
+            public Motorcycle(int vehicleId, string make, string model, float fuelEfficiency, int engineCC,
+            bool isSportBike) : base (vehicleId, make, model, fuelEfficiency)
             {
-                EngineCC = enginecc;
-                IsSportBike = issportbike;
+                EngineCC = engineCC;
+                IsSportBike = isSportBike;
             }
 
             public float CalculateFuelConsumption (float distance)
             {
-                float fuelconsumption = distance / FuelEfficiency; 
+                float fuelConsumption = distance / FuelEfficiency; 
                 if (IsSportBike)
                 {
-                    fuelconsumption *= 1.1f;
+                    fuelConsumption *= 1.1f;
                 }
 
-                return fuelconsumption;
+                return fuelConsumption;
             }
         }
         class Truck : Vehicle
@@ -88,10 +88,10 @@ namespace Vehicle_Cornel_DelaCruz
             public float CargoCapacity { get; set; }
             public bool IsHeavyDuty { get; set; }
 
-            public Truck(int vehicleid, string make, string model, float fuelefficiency, float cargocapacity, bool isheavyduty) : base (vehicleid, make, model, fuelefficiency)
+            public Truck(int vehicleId, string make, string model, float fuelEfficiency, float cargoCapacity, bool isHeavyDuty) : base (vehicleId, make, model, fuelEfficiency)
             {
-                CargoCapacity = cargocapacity;
-                IsHeavyDuty = isheavyduty;
+                CargoCapacity = cargoCapacity;
+                IsHeavyDuty = isHeavyDuty;
             }
 
             public float CalculateFuelConsumption(float distance, float cargoWeight)
